@@ -1,1 +1,21 @@
 
+const texto = `Oi, Julia ❤️
+
+Quero que saiba que você é uma pessoa muito especial para mim.
+
+Seu sorriso ilumina meus dias e espero que esta pequena surpresa mostre o quanto você é importante.
+
+Com carinho. ❤️`;
+
+let i = 0;
+const elemento = document.getElementById("texto");
+
+function escrever() {
+  if (i < texto.length) {
+    elemento.innerHTML += texto.charAt(i);
+    i++;
+    setTimeout(escrever, 60);
+  }
+}
+
+window.onload = escrever;
