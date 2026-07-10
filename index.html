@@ -1,92 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Julia ❤️</title>
+const texto = `Oi, Julia ❤️
 
-<link rel="stylesheet" href="style.css">
-</head>
+Quero que saiba que você é uma pessoa muito especial para mim.
 
-<body>
+Seu sorriso ilumina meus dias e espero que esta pequena surpresa mostre o quanto você é importante.
 
-<div id="stars"></div>
+Com carinho. ❤️`;
 
-<div class="container">
+let i = 0;
+const elemento = document.getElementById("typing");
 
-<h1>❤️ Para Julia ❤️</h1>
+function escrever() {
+    if (i < texto.length) {
+        elemento.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(escrever, 60);
+    }
+}
 
-<h2>Uma carta escrita por Carlos</h2>
-
-<p id="typing"></p>
-
-<div class="heart">
-❤️
-</div>
-
-<div class="poema">
-
-<h3>Meu Poema</h3>
-
-<p>
-
-Você chegou como quem ilumina o céu em uma noite escura.<br><br>
-
-Seu sorriso é o tipo de luz que faz qualquer tristeza desaparecer.<br><br>
-
-Seus olhos castanhos claros guardam um brilho impossível de explicar.<br><br>
-
-Você é inteligente, delicada, divertida e tão agitada que consegue transformar qualquer momento em uma lembrança feliz.<br><br>
-
-Eu adoro imaginar você usando seus vestidos, lendo um livro ou assistindo um dorama com aquele jeitinho que só você tem.<br><br>
-
-E sempre que vejo um Ouro Branco lembro de você... doce por fora, mais incrível ainda por dentro.<br><br>
-
-Se algum dia você duvidar do quanto é especial, volte nesta página.<br><br>
-
-Porque ela foi feita para lembrar você de uma única verdade:<br><br>
-
-<b>Você é uma das pessoas mais incríveis que já conheci.</b>
-
-</p>
-
-</div>
-
-<button onclick="mostrarMensagem()">
-
-Clique aqui ❤️
-
-</button>
-
-<div id="final" style="display:none">
-
-<h2>
-
-Eu gosto muito de você, Julia.
-
-</h2>
-
-<p>
-
-Espero que esta pequena surpresa consiga fazer você sorrir, nem que seja por alguns segundos.
-
-Obrigado por existir.
-
-<br><br>
-
-❤️ Com carinho,
-
-<br>
-
-Carlos
-
-</p>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+window.onload = escrever;
